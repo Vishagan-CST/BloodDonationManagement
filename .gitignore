@@ -1,0 +1,22 @@
+# Backend
+WebApi/bin/
+WebApi/obj/
+
+# Frontend
+react-app/node_modules/
+react-app/build/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Environment
+*.env
+appsettings.Development.json

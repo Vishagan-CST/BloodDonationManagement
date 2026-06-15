@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #ff4757;
+  --primary-hover: #ff6b81;
+  --secondary: #2f3542;
+  --bg-color: #ffffff;
+  --panel-bg: rgba(255, 255, 255, 0.7);
+  --panel-border: rgba(0, 0, 0, 0.05);
+  --text-main: #2f3542;
+  --text-muted: #747d8c;
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  --error: #ff4757;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 71, 87, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(83, 82, 237, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Layout */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+}
+
+.form-panel {
+  flex: 1;
+  min-width: 350px;
+}
+
+.list-panel {
+  flex: 2;
+  overflow: hidden;
+}
+
+.panel-title, .form-title {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  color: var(--secondary);
+}
+
+/* Forms & Inputs */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.input-group.full-width {
+  grid-column: span 2;
+}
+
+input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.2);
+}
+
+.error-text {
+  color: var(--error);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-main);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.premium-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.8rem;
+}
+
+.premium-table th {
+  text-align: left;
+  padding: 0 1rem 0.5rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.premium-table td {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.premium-table td:first-child {
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px 0 0 12px;
+}
+
+.premium-table td:last-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0 12px 12px 0;
+}
+
+.table-row {
+  transition: transform 0.2s ease;
+}
+
+.table-row:hover {
+  transform: scale(1.01);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.badge {
+  background: rgba(255, 71, 87, 0.15);
+  color: var(--primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 71, 87, 0.3);
+}
+
+/* Action Buttons inside Table */
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  margin-right: 0.5rem;
+}
+
+.edit-btn {
+  color: #7bed9f;
+  background: rgba(123, 237, 159, 0.1);
+}
+
+.edit-btn:hover {
+  background: rgba(123, 237, 159, 0.2);
+}
+
+.delete-btn {
+  color: var(--primary);
+  background: rgba(255, 71, 87, 0.1);
+}
+
+.delete-btn:hover {
+  background: rgba(255, 71, 87, 0.2);
+}
