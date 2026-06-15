@@ -92,10 +92,3 @@ Follow these instructions to get a copy of the project up and running on your lo
    ```
 > The React app will automatically open in your browser at `http://localhost:3000`.
 
----
-
-## 🤝 Contributing
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
-
-## 📝 License
-This project is open-source and available under the [MIT License](LICENSE).
